@@ -1,0 +1,104 @@
+---
+import Button from "./Button.astro";
+
+const arr = [
+  "Departamentos en venta",
+  "Oficinas en venta",
+  "Próximos lanzamientos",
+  "Vende tu terreno",
+  "Solicita una cotización",
+  "Preguntas frecuentes",
+];
+---
+
+<header class="w-full">
+  <div class="container flex justify-between items-center p-5 mx-auto">
+    <a href="/" class="flex items-center gap-2 text-stone-900">
+      <svg
+        viewBox="0 0 640 640"
+        class="fill-stone-500 size-7"
+        focusable="false"
+      >
+        <path
+          d="M201.7 291.5C236 310.2 266.2 335.6 290.5 366C301.6 379.9 311.5 394.9 319.9 410.8C328.4 394.9 338.2 380 349.3 366C373.6 335.5 403.8 310.1 438.1 291.5C479.8 268.8 527.5 256 577.8 256L587.7 256C598.8 256 607.8 265 607.8 276.1C607.8 424.1 487.9 544 339.9 544L299.7 544C151.9 544 32 424.1 32 276.1C32 265 41 256 52.1 256L62 256C112.4 256 160.1 268.8 201.7 291.5zM335.9 102C352.8 117.9 397.3 165.4 424.9 244.3C384.8 264.5 349.1 292.5 320 326.4C290.8 292.5 255.2 264.6 215.1 244.3C242.7 165.4 287.3 117.9 304.1 102C308.4 97.9 314.1 96 320 96C325.9 96 331.6 98 335.9 102z"
+        ></path>
+      </svg>
+      <span class="text-2xl font-semibold tracking-tighter">havitat</span>
+    </a>
+    <div x-data="{ open: false }">
+      <Button @click="open = ! open" label="Menú">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-5"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+        </svg>
+      </Button>
+
+      <div x-show="open" class="absolute inset-0 bg-white flex flex-col">
+        <div class="flex justify-between items-center p-5">
+          <a href="/" class="flex items-center gap-2 text-stone-900">
+            <svg
+              viewBox="0 0 640 640"
+              class="fill-stone-500 size-7"
+              focusable="false"
+            >
+              <path
+                d="M201.7 291.5C236 310.2 266.2 335.6 290.5 366C301.6 379.9 311.5 394.9 319.9 410.8C328.4 394.9 338.2 380 349.3 366C373.6 335.5 403.8 310.1 438.1 291.5C479.8 268.8 527.5 256 577.8 256L587.7 256C598.8 256 607.8 265 607.8 276.1C607.8 424.1 487.9 544 339.9 544L299.7 544C151.9 544 32 424.1 32 276.1C32 265 41 256 52.1 256L62 256C112.4 256 160.1 268.8 201.7 291.5zM335.9 102C352.8 117.9 397.3 165.4 424.9 244.3C384.8 264.5 349.1 292.5 320 326.4C290.8 292.5 255.2 264.6 215.1 244.3C242.7 165.4 287.3 117.9 304.1 102C308.4 97.9 314.1 96 320 96C325.9 96 331.6 98 335.9 102z"
+              ></path>
+            </svg>
+            <span class="text-2xl font-semibold tracking-tighter">havitat</span>
+          </a>
+
+          <Button @click="open = false" label="Cerrar">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"></path>
+            </svg>
+          </Button>
+        </div>
+
+        <ul class="flex-1 flex flex-col px-5 py-4">
+          {
+            arr.map((item) => (
+              <li>
+                <a
+                  href="#"
+                  class="group flex gap-2 w-full py-4 border-b-1 border-gray-200 text-stone-900"
+                >
+                  <span class="font-medium group-hover:font-bold transition-all">
+                    {item}
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <section
+          class="flex flex-col items-center justify-center gap-4 px-5 py-4"
+        >
+          <p>Teléfono 1</p>
+          <p>Teléfono 2</p>
+          <p>RRSS</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</header>

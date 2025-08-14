@@ -8,7 +8,7 @@ const { label, ...rest } = Astro.props;
 
 <button
   {...rest}
-  class="flex items-center h-fit gap-2.5 px-3.5 py-2.5 rounded-lg overflow-hidden shadow-xs text-stone-900 transition-colors border border-gray-200 cursor-pointer hover:border-gray-300 hover:bg-neutral-100/50 active:bg-neutral-100 active:inset-shadow-xs focus-visible:border-gray-300 focus-visible:bg-neutral-100/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200"
+  class="flex items-center h-fit gap-2.5 px-3.5 py-2.5 rounded-lg overflow-hidden shadow-xs transition-colors border border-gray-200 cursor-pointer hover:border-gray-300 hover:bg-neutral-100/50 active:bg-neutral-100 active:inset-shadow-xs focus-visible:border-gray-300 focus-visible:bg-neutral-100/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-200"
 >
   {label && <span class="text-sm/3.5 font-medium">{label}</span>}
   <slot />

@@ -12,10 +12,10 @@ const arr = [
 ---
 
 <header
-  class="fixed top-0 flex items-stretch bg-white w-full h-18 border-b border-gray-200"
+  class="fixed top-0 left-0 right-0 bg-white flex items-stretch justify-center w-full h-18 border-b border-gray-200"
 >
   <div
-    class="lg:container flex items-center justify-between w-full px-6 lg:mx-auto text-green-900"
+    class="lg:container flex items-center justify-between w-full px-6 text-teal-700"
   >
     <a
       href="/"
@@ -29,6 +29,42 @@ const arr = [
       </svg>
       <span class="text-2xl font-semibold tracking-tighter">havitat</span>
     </a>
+    <div
+      class="hidden h-full divide-x-1 divide-gray-200 font-medium transition-colors lg:flex border-x-1 border-gray-200 *:hover:bg-neutral-100/50 *:active:bg-neutral-100 *:active:inset-shadow-xs"
+    >
+      <a href="#" class="flex flex-col items-center justify-center gap-1 px-6">
+        <span class="text-sm font-semibold text-current/50">Cotización</span>
+        <div class="flex items-center gap-2">
+          <svg
+            viewBox="0 0 16 16"
+            class="fill-current size-4"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="m3.855 7.286 1.067-.534a1 1 0 0 0 .542-1.046l-.44-2.858A1 1 0 0 0 4.036 2H3a1 1 0 0 0-1 1v2c0 .709.082 1.4.238 2.062a9.012 9.012 0 0 0 6.7 6.7A9.024 9.024 0 0 0 11 14h2a1 1 0 0 0 1-1v-1.036a1 1 0 0 0-.848-.988l-2.858-.44a1 1 0 0 0-1.046.542l-.534 1.067a7.52 7.52 0 0 1-4.86-4.859Z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span>580 7002</span>
+        </div>
+      </a>
+      <a href="#" class="flex flex-col items-center justify-center gap-1 px-6">
+        <span class="text-sm font-semibold text-current/50">Postventa</span>
+        <div class="flex items-center gap-2">
+          <svg
+            viewBox="0 0 16 16"
+            class="fill-current size-4"
+            aria-hidden="true"
+          >
+            <path
+              fill-rule="evenodd"
+              d="m3.855 7.286 1.067-.534a1 1 0 0 0 .542-1.046l-.44-2.858A1 1 0 0 0 4.036 2H3a1 1 0 0 0-1 1v2c0 .709.082 1.4.238 2.062a9.012 9.012 0 0 0 6.7 6.7A9.024 9.024 0 0 0 11 14h2a1 1 0 0 0 1-1v-1.036a1 1 0 0 0-.848-.988l-2.858-.44a1 1 0 0 0-1.046.542l-.534 1.067a7.52 7.52 0 0 1-4.86-4.859Z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span>580 7002</span>
+        </div>
+      </a>
+    </div>
     <div
       x-data="{ open: false }"
       x-effect="document.body.classList.toggle('overflow-hidden', open)"
@@ -49,10 +85,10 @@ const arr = [
       </Button>
       <div
         x-show="open"
-        class="absolute top-0 right-0 bg-white flex flex-col w-full h-screen"
+        class="absolute inset-0 bg-white flex flex-col pt-18 w-full h-screen overflow-y-auto custom-scrollbar"
       >
         <header
-          class="flex items-center justify-between px-6 h-18 border-b border-gray-200"
+          class="fixed top-0 bg-white flex items-center justify-between px-6 w-full h-18 border-b border-gray-200"
         >
           <a
             href="/"
@@ -86,13 +122,13 @@ const arr = [
             </svg>
           </Button>
         </header>
-        <ul class="flex-1 flex flex-col overflow-y-auto custom-scrollbar pb-9">
+        <ul class="flex-1 flex flex-col pb-14">
           {
             arr.map((item) => (
               <li>
                 <a
                   href="#"
-                  class="group flex items-center justify-between gap-6 px-6 h-18 border-b border-gray-200 hover:bg-neutral-100/50 active:bg-neutral-100 active:inset-shadow-xs transition-colors"
+                  class="group flex items-center justify-between gap-6 px-6 h-14 border-b border-gray-200 hover:bg-neutral-100/50 active:bg-neutral-100 active:inset-shadow-xs transition-colors"
                   aria-label={`Ir a ${item}`}
                 >
                   <span class="font-medium">{item}</span>

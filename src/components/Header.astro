@@ -1,5 +1,6 @@
 ---
 import Button from "./Button.astro";
+import Logo from "./Logo.astro";
 
 const arr = [
   "Departamentos en venta",
@@ -12,25 +13,12 @@ const arr = [
 ---
 
 <header
-  class="fixed top-0 left-0 right-0 bg-white flex items-stretch justify-center w-full h-18 border-b border-gray-200"
+  class="fixed top-0 inset-x-0 bg-white flex justify-center h-16 border-b border-gray-200 text-teal-700"
 >
-  <div
-    class="lg:container flex items-center justify-between w-full px-6 text-teal-700"
-  >
-    <a
-      href="/"
-      class="flex items-center gap-1.5"
-      aria-label="Havitat - Página principal"
-    >
-      <svg viewBox="0 0 640 640" class="fill-current size-7" aria-hidden="true">
-        <path
-          d="M201.7 291.5c34.3 18.7 64.5 44.1 88.8 74.5 11.1 13.9 21 28.9 29.4 44.8 8.5-15.9 18.3-30.8 29.4-44.8 24.3-30.5 54.5-55.9 88.8-74.5 41.7-22.7 89.4-35.5 139.7-35.5h9.9c11.1 0 20.1 9 20.1 20.1 0 148-119.9 267.9-267.9 267.9h-40.2C151.9 544 32 424.1 32 276.1 32 265 41 256 52.1 256H62c50.4 0 98.1 12.8 139.7 35.5zM335.9 102c16.9 15.9 61.4 63.4 89 142.3A339.97 339.97 0 0 0 320 326.4c-29.2-33.9-64.8-61.8-104.9-82.1 27.6-78.9 72.2-126.4 89-142.3 4.3-4.1 10-6 15.9-6s11.6 2 15.9 6z"
-        ></path>
-      </svg>
-      <span class="text-2xl font-semibold tracking-tighter">havitat</span>
-    </a>
+  <div class="lg:container flex items-center justify-between w-full px-6">
+    <Logo />
     <div
-      class="hidden h-full divide-x-1 divide-gray-200 font-medium transition-colors lg:flex border-x-1 border-gray-200 *:hover:bg-neutral-100/50 *:active:bg-neutral-100 *:active:inset-shadow-xs"
+      class="hidden lg:flex h-full divide-x-1 divide-gray-200 font-medium transition-colors border-x-1 border-gray-200 *:hover:bg-neutral-100/50 *:active:bg-neutral-100 *:active:inset-shadow-xs"
     >
       <a href="#" class="flex flex-col items-center justify-center gap-1 px-6">
         <span class="text-sm font-semibold text-current/50">Cotización</span>
@@ -74,7 +62,7 @@ const arr = [
         <svg
           viewBox="0 0 24 24"
           stroke-width="1.5"
-          class="fill-none stroke-current size-5"
+          class="size-5 fill-none stroke-current"
           aria-hidden="true"
         >
           <path
@@ -85,35 +73,18 @@ const arr = [
       </Button>
       <div
         x-show="open"
-        class="absolute inset-0 bg-white flex flex-col pt-18 w-full h-screen overflow-y-auto custom-scrollbar"
+        class="absolute inset-0 bg-white flex flex-col pt-16 h-screen overflow-y-auto custom-scrollbar"
       >
         <header
-          class="fixed top-0 bg-white flex items-center justify-between px-6 w-full h-18 border-b border-gray-200"
+          class="fixed top-0 inset-x-0 bg-white flex items-center justify-between h-16 px-6 border-b border-gray-200"
         >
-          <a
-            href="/"
-            class="flex items-center gap-1.5"
-            aria-label="Havitat - Página principal"
-          >
-            <svg
-              viewBox="0 0 640 640"
-              class="fill-current size-7"
-              aria-hidden="true"
-            >
-              <path
-                d="M201.7 291.5C236 310.2 266.2 335.6 290.5 366C301.6 379.9 311.5 394.9 319.9 410.8C328.4 394.9 338.2 380 349.3 366C373.6 335.5 403.8 310.1 438.1 291.5C479.8 268.8 527.5 256 577.8 256L587.7 256C598.8 256 607.8 265 607.8 276.1C607.8 424.1 487.9 544 339.9 544L299.7 544C151.9 544 32 424.1 32 276.1C32 265 41 256 52.1 256L62 256C112.4 256 160.1 268.8 201.7 291.5zM335.9 102C352.8 117.9 397.3 165.4 424.9 244.3C384.8 264.5 349.1 292.5 320 326.4C290.8 292.5 255.2 264.6 215.1 244.3C242.7 165.4 287.3 117.9 304.1 102C308.4 97.9 314.1 96 320 96C325.9 96 331.6 98 335.9 102z"
-              ></path>
-            </svg>
-            <span class="text-2xl font-semibold tracking-tighter">havitat</span>
-          </a>
+          <Logo />
           <Button @click="open = false" label="Cerrar">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
-              stroke="currentColor"
-              class="size-5"
+              class="size-5 fill-none stroke-current"
+              aria-hidden="true"
             >
               <path
                 stroke-linecap="round"
